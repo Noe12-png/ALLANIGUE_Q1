@@ -15,8 +15,16 @@ public class MainClass {
         System.out.print("Enter Course Code: ");
         String courseCode = scanner.nextLine();
 
-        System.out.print("Enter Number of Units (Max 10): ");
-        int numberOfUnits = scanner.nextInt();
+        // Input for number of units with validation
+        int numberOfUnits;
+        do {
+            System.out.print("Enter Number of Units (1-10): ");
+            numberOfUnits = scanner.nextInt();
+
+            if (numberOfUnits > 10 || numberOfUnits < 1) {
+                System.out.println("Error: The number of units must be between 1 and 10. Please try again.");
+            }
+        } while (numberOfUnits > 10 || numberOfUnits < 1); // Loop until a valid number of units is entered
 
         // Create an instance of the StudentEnrollment class
         StudentEnrollment student = new StudentEnrollment(studentName, course, courseCode, numberOfUnits);
