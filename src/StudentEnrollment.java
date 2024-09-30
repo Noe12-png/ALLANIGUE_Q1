@@ -1,4 +1,4 @@
-// Class
+// Class StudentEnrollment
 public class StudentEnrollment {
     private String studentName;
     private String course;
